@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_admin_panel/consts/constants.dart';
+import 'package:grocery_admin_panel/inner_screens/all_products.dart';
 import 'package:grocery_admin_panel/inner_screens/upload_product_form.dart';
 import 'package:grocery_admin_panel/responsive.dart';
 import 'package:grocery_admin_panel/services/global_method.dart';
@@ -47,14 +48,17 @@ class DashboardScreen extends StatelessWidget {
               child: Row(
                 children: [
                   ButtonsWidget(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => const AllProductsScreen()));
+                      },
                       text: 'View All',
                       icon: Icons.store,
                       backgroundColor: Colors.blue),
-                  Spacer(),
+                  const Spacer(),
                   ButtonsWidget(
                       onPressed: () {
-                        Navigator.pushReplacement(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const UploadProductForm()));
@@ -81,7 +85,7 @@ class DashboardScreen extends StatelessWidget {
                           childAspectRatio:
                           size.width < 650 && size.width > 300 ? 1.0 : 0.8,
                         ),
-                        desktop: GridViewProducts(
+                        desktop: const GridViewProducts(
                           childAspectRatio: 0.95,
                         ),
                       ),

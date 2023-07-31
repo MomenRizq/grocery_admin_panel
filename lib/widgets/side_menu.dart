@@ -36,7 +36,7 @@ class _SideMenuState extends State<SideMenu> {
           DrawerListTile(
             title: "Main",
             press: () {
-              Navigator.of(context).pushReplacement(
+              Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const MainScreen(),
                 ),
@@ -47,7 +47,7 @@ class _SideMenuState extends State<SideMenu> {
           DrawerListTile(
             title: "View all product",
             press: () {
-              Navigator.pushReplacement(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const AllProductsScreen()));
              
             },
@@ -56,7 +56,7 @@ class _SideMenuState extends State<SideMenu> {
           DrawerListTile(
             title: "View all order",
             press: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const AllOrdersScreen()));
